@@ -16,6 +16,7 @@ class DetailBloc extends Bloc<DetailEvent, DetailState> {
   late CompanySymbol _symbol;
 
   final IChartApi _api;
+  bool _online = true;
 
   final NetworkConnectivity _nc = NetworkConnectivity.instance;
   Future<void> initialise() async {
@@ -49,8 +50,10 @@ class DetailBloc extends Bloc<DetailEvent, DetailState> {
   }
 
   _onNetwork(_Network event, Emitter<DetailState> emit) async {
+    if (event.avalable == _online) return;
+    _online = event.avalable;
     if (event.avalable) {
-      // add(const _Update());
+      add(const _Update());
     } else {
       emit(DetailState.failure(failure: ErrorObject.noConnection));
     }

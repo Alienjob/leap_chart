@@ -49,7 +49,7 @@ class TotalBloc extends Bloc<TotalEvent, TotalState> {
 
   _onNetwork(_Network event, Emitter<TotalState> emit) async {
     if (event.avalable) {
-      //add(const _Update());
+      //add(const _Update()); too match queries
     } else {
       emit(TotalState.failure(failure: ErrorObject.noConnection));
     }

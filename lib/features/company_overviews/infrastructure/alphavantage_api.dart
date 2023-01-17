@@ -17,8 +17,9 @@ import 'package:leap_test_fl_chart/features/core/domain/failures.dart';
 import 'package:dio/dio.dart';
 import 'package:leap_test_fl_chart/features/core/infrastructure/network_connectivity.dart';
 
-// const _api_key = 'CGT07UAPRUAX5JF1'; потрачено
-const _api_key = 'MSWKU3EQ69FPU6Z3';
+const _api_key = 'CGT07UAPRUAX5JF1';
+// const _api_key = 'MSWKU3EQ69FPU6Z3';
+//const _api_key = 'demo';
 
 @LazySingleton(as: IChartApi)
 class AlphavantageChartApi implements IChartApi {
